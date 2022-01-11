@@ -97,7 +97,7 @@ pub enum ResolutionStrategy {
 }
 
 /// Builder to configure and create a [`LoadBalancedChannel`].
-pub struct LoadBalancedChannelBuilder<T, S> {
+pub struct LoadBalancedChannelBuilder<T: Send, S> {
     service_definition: S,
     probe_interval: Option<Duration>,
     resolution_strategy: ResolutionStrategy,
